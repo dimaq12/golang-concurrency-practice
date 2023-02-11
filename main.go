@@ -46,7 +46,7 @@ func makePizza(pizzaNumber int) *PizzaOrder {
 		}
 		total++
 
-		fmt.Printf("Making pizza #%d. It will take %d seconds", pizzaNumber, delay)
+		fmt.Printf("Making pizza #%d. It will take %d seconds\n", pizzaNumber, delay)
 		time.Sleep(time.Duration(delay) * time.Second)
 
 		if rnd < 2 {
@@ -79,6 +79,7 @@ func pizzeria(pizzaMaker *Producer) {
 	// try to make pizzas
 
 	for {
+		color.HiYellow("in cycle %d\n", i)
 		currentPizza := makePizza(i)
 
 		if currentPizza != nil {
